@@ -1,11 +1,12 @@
 class FoldersController < ApplicationController
     def new
-        raise params
-        binding.pry
+        @user = User.find(params[:user_id])
+        @folder = Folder.new
     end
 
     def index
-        raise params
+        @user = User.find(params[:user_id])
+        @folders = @user.folders
     end
 
     def show
@@ -13,10 +14,19 @@ class FoldersController < ApplicationController
     end
 
     def create
-        raise params
+        @folder = Folder.create(folder_params)
+        @user = User.find_by(id: folder_params[:user_id])
+        @user.folders << @folder
+        binding.pry
+        redirect_to user_folder_path(@user, @folder)
     end
 
     def destroy
         raise params
+    end
+
+    private
+    def folder_params
+        params.require(:folder).permit(:name, :user_id)
     end
 end
