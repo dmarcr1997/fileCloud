@@ -1,0 +1,13 @@
+<div>
+
+    <h2>Sign in</h2>
+    <%=form_for @user, url: sessions_path, method: 'post' do |f|%>
+        <%=f.label :name, "Enter Your Name" %>
+        <%=f.text_field :name%>
+        <br>
+        <%=f.label :password, "Enter Your Password" %>
+        <%=f.text_field :password %>
+        <%=f.submit 'Signin'%>
+    <%end%>
+    <%= link_to('Signup', new_user_path)%>
+</div>
