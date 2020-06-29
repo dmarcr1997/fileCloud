@@ -1,4 +1,4 @@
-class AddAttachmentPictureToUserFiles < ActiveRecord::Migration
+class AddAttachmentPictureToUserFiles < ActiveRecord::Migration[6.0]
   def self.up
     change_table :user_files do |t|
       t.attachment :picture
