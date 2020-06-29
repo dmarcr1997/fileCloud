@@ -10,14 +10,14 @@ class FoldersController < ApplicationController
     end
 
     def show
-        raise params
+        @folder = Folder.find_by(id: params[:id])
+        @user = User.find_by(id: params[:user_id])
     end
 
     def create
         @folder = Folder.create(folder_params)
         @user = User.find_by(id: folder_params[:user_id])
         @user.folders << @folder
-        binding.pry
         redirect_to user_folder_path(@user, @folder)
     end
 
