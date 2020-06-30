@@ -1,5 +1,5 @@
 <h1><%=@user.name%>'s Folders</h1>
 <% @folders.each do |folder| %>
-    <h2><%=folder.name%></h2>
+    <h2><%=link_to(folder.name, user_folder_path(@user.id, folder.id))%></h2>
 <%end%>
 <%= link_to("GO HOME", @user) %>

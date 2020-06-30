@@ -1,3 +1,4 @@
 <h1><%= @user.name%>'s FOLDER: <%= @folder.name%></h1>
 <p>Files:</p>
+<%= link_to("NEW FILE", new_file_path(@folder.id))%>
 <%= link_to("GO HOME", @user)%>
