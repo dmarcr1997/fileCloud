@@ -1,4 +1,8 @@
 <h1><%= @user.name%>'s FOLDER: <%= @folder.name%></h1>
-<p>Files:</p>
+<ul>Files:
+    <% @files.each do |fl|%>
+        <li> Name: <%=fl.filename%><br/> <%=link_to("DOWNLOAD", download_path(fl))%> </li>
+    <%end%>
+</ul>
 <%= link_to("NEW FILE", new_file_path(@folder.id))%>
 <%= link_to("GO HOME", @user)%>

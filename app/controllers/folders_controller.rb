@@ -12,6 +12,7 @@ class FoldersController < ApplicationController
     def show
         @folder = Folder.find_by(id: params[:id])
         @user = User.find_by(id: params[:user_id])
+        @files = @folder.user_files
     end
 
     def create

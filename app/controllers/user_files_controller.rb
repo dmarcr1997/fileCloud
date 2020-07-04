@@ -5,7 +5,8 @@ class UserFilesController < ApplicationController
    end
 
    def show
-        @user_file = UserFile.find(params[:id])
+
+        @user_file = UserFile.find(params[:file_id])
         send_data @user_file.data, :filename => @user_file.filename, :type => @user_file.content_type
    end
 
@@ -23,11 +24,6 @@ class UserFilesController < ApplicationController
             flash[:error] = "There was a problem submitting your attachment."
             redirect_to new_user_file(@user.id)
         end
-    end
-
-    private
-    def user_files_params
-
     end
 
 end
