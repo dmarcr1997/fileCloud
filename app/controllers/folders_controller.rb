@@ -1,4 +1,5 @@
 class FoldersController < ApplicationController
+    before_action :require_login 
     def new
         @user = User.find(params[:user_id])
         @folder = Folder.new

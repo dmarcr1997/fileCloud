@@ -1,4 +1,5 @@
 class UserFilesController < ApplicationController
+   before_action :require_login 
    def new 
         @user_file = UserFile.new
         @folder = Folder.find(params[:folder_id])

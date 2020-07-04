@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs">
+  <li><%= link_to("NEW FOLDER", new_user_folder_path(@user)) %></li>
+  <li><%= link_to("MY FOLDERS", user_folders_path(@user)) %></li>
+  <li class='active'><%= link_to("HOME", user_path(@user))%></li>
+  <li><%=link_to("LOGOUT", logout_path)%>
+</ul>
 <h1>User: <%= @user.name%></h1>
-<%= link_to("NEW FOLDER", new_user_folder_path(@user)) %>
-<%= link_to("MY FOLDERS", user_folders_path(@user)) %>
+
