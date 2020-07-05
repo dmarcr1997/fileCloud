@@ -20,7 +20,7 @@ class UserFilesController < ApplicationController
         @user_file.folder = @folder
         if @user_file.save
             flash[:notice] = "Thank you for your submission"
-            redirect_to user_path(@user)
+            redirect_to user_folder_path(@user, @folder)
         else
             flash[:error] = "There was a problem submitting your attachment."
             redirect_to new_user_file(@user.id)

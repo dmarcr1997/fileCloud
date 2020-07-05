@@ -1,8 +1,15 @@
-<h1><%= @user.name%>'s FOLDER: <%= @folder.name%></h1>
-<ul>Files:
-    <% @files.each do |fl|%>
-        <li> Name: <%=fl.filename%><br/> <%=link_to("DOWNLOAD", download_path(fl))%> </li>
-    <%end%>
+<ul class="nav nav-tabs">
+  <li><%= link_to("NEW FILE", new_file_path(@folder)) %></li>
+  <li><%= link_to("MY FOLDERS", user_folders_path(@user)) %></li>
+  <li><%= link_to("HOME", user_path(@user))%></li>
+  <li><%=link_to("LOGOUT", logout_path)%>
 </ul>
-<%= link_to("NEW FILE", new_file_path(@folder.id))%>
-<%= link_to("GO HOME", @user)%>
+<div class='container'>
+    <h1><%= @user.name%>'s FOLDER: <%= @folder.name%></h1>
+    <ul>Files:
+        <% @files.each do |fl|%>
+            <li> Name: <%=fl.filename%><br/> <%=link_to("DOWNLOAD", download_path(fl))%> </li>
+        <%end%>
+    </ul>
+    <img class='img-thumbnail' src='https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='file'>
+</div>

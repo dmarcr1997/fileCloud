@@ -1,5 +1,13 @@
-<h1><%=@user.name%>'s Folders</h1>
-<% @folders.each do |folder| %>
-    <h2><%=link_to(folder.name, user_folder_path(@user.id, folder.id))%></h2>
-<%end%>
-<%= link_to("GO HOME", @user) %>
+<ul class="nav nav-tabs">
+  <li><%= link_to("NEW FOLDER", new_user_folder_path(@user)) %></li>
+  <li class='active'><%= link_to("MY FOLDERS", user_folders_path(@user)) %></li>
+  <li><%= link_to("HOME", user_path(@user))%></li>
+  <li><%=link_to("LOGOUT", logout_path)%>
+</ul>
+<div class='container'>    
+    <h1><%=@user.name%>'s Folders</h1>
+    <% @folders.each do |folder| %>
+        <li><%=link_to(folder.name, user_folder_path(@user.id, folder.id))%></li>
+    <%end%>
+      <img class= 'img-thumbnail' src='https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='filecab'/>
+</div>

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
         else
             puts 'I cant find that person'
-            redirect_to new_session_path
+            redirect_to login_path
         end
     end
 
