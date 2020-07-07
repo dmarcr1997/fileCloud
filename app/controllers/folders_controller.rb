@@ -24,7 +24,11 @@ class FoldersController < ApplicationController
     end
 
     def destroy
-        raise params
+        @folder = Folder.find_by(id: params[:folder_id])
+        @user = User.find_by(id: params[:user_id])
+        @folder.user_files.delete_all
+        Folder.delete(@folder)
+        redirect_to user_folders_path(@user) 
     end
 
     private

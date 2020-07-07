@@ -27,4 +27,12 @@ class UserFilesController < ApplicationController
         end
     end
 
+    def destroy
+        @folder = Folder.find(params[:folder_id])
+        @user = User.find(session[:user_id])
+        @user_file = params[:id]
+        UserFile.delete(@user_file)
+        redirect_to user_folder_path(@user, @folder)
+    end
+
 end

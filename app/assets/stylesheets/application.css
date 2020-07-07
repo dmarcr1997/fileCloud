@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body{
+    font-family: Prequel;
+    src: ('PrequeldemoRegular-BWWdw.ttf');
+}
+h1{
+    font-weight: bold;
+}

@@ -5,8 +5,9 @@
 
 <div class='container'>
     <div class='jumbotron'>
-        <h2>FileCloud</h2>
+        <h1>FILECLOUD</h1>
         <img class='img-thumbnail' src='https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='cloudCity'>
+        
         <h3>Sign in</h3>
         <%=form_for @user, url: sessions_path, method: 'post' do |f|%>
             <div class="form-group">
@@ -19,7 +20,6 @@
             </div>
             <%=f.submit 'Go', class: "btn btn-default"%>
         <%end%>
-        
     </div>
     
 </div>
