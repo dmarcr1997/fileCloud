@@ -6,9 +6,9 @@
 </ul>
 <div class='container'>
     <h1><%= @user.name%>'s FOLDER: <%= @folder.name%></h1>
-    <ul>Files:
+    <ul><h3>Files</h3>
         <% @files.each do |fl|%>
-            <li> Name: <%=fl.filename%><br/> <%=link_to("DOWNLOAD", download_path(fl))%> <button class='btn btn-dark'><%=link_to('DELETE', delete_file_path(@user,@folder,fl.id))%></button></li>
+            <h4> Name: <%=fl.filename%><br/> <%=link_to("DOWNLOAD", download_path(fl))%> <button class='btn btn-danger'><%=link_to('DELETE', delete_file_path(@user,@folder,fl.id))%></button></h4>
         <%end%>
     </ul>
     <img class='img-thumbnail' src='https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='file'>

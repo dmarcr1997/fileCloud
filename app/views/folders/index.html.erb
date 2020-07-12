@@ -7,7 +7,7 @@
 <div class='container'>    
     <h1><%=@user.name%>'s Folders</h1>
     <% @folders.each do |folder| %>
-        <li><%=link_to(folder.name, user_folder_path(@user.id, folder.id))%><br/><button type='button' class='btn btn-dark'><%=link_to('DELETE', delete_folder_path(@user,folder))%></button></li>
+        <h3><%=link_to(folder.name, user_folder_path(@user.id, folder.id))%>   <button type='button' class='btn btn-danger'><%=link_to('DELETE', delete_folder_path(@user,folder))%></button></h3>
     <%end%>
       <img class= 'img-thumbnail' src='https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='filecab'/>
 </div>
